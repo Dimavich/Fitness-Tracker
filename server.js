@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const morgan = require('morgan');
+const logger = require('morgan');
 
 const PORT = process.env.PORT || 3001;
 
@@ -9,10 +9,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
-// app.use(logger('dev'));
+app.use(logger('dev'));
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/fitness',
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
     {
         useNewUrlParser:true,
         useUnifiedTopology: true,
