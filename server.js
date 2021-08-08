@@ -1,9 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
-
 const PORT = process.env.PORT || 3001;
-
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -21,6 +19,7 @@ mongoose.connect(
     }
 );
 
+
 app.listen(PORT, ()=>{
-    console.log(`Server running on PORT: ${PORT}`);
+    console.log(`Server on PORT: ${PORT}`);
 });
