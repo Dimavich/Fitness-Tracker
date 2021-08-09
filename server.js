@@ -12,12 +12,13 @@ app.use(logger('dev'));
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/workout',
     {
-        useNewUrlParser:true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
     }
-);
+  );
+  
 
 app.use(require('./routs/apiRouts'));
 app.use(require('./routs/htmlRouts'));
