@@ -19,6 +19,8 @@ mongoose.connect(
     }
 );
 
+app.use(require('./routs/apiRouts'));
+app.use(require('./routs/htmlRouts'));
 
 app.listen(PORT, ()=>{
     console.log(`Server on PORT: ${PORT}`);
